@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNMUS Reminder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header-top">
+            <span class="badge">⭐ UNMUS Reminder</span>
+            <p class="sub-judul">Pengingat Tugas & Jadwal Kuliah</p>
+        </div>
+
+        <!-- HALAMAN LOGIN -->
+        <div id="halamanLogin" class="kotak">
+            <h2>Selamat Datang!</h2>
+            <p>Masuk dengan Nama Lengkap, NPM, dan kata sandi Anda — tanpa email.</p>
+            <input type="text" id="inputNama" placeholder="Nama Lengkap">
+            <input type="text" id="inputNpm" placeholder="NPM">
+            <input type="password" id="inputSandi" placeholder="Kata Sandi">
+            <button onclick="login()">Masuk Sekarang</button>
+            <small>✨ NPM belum terdaftar? Akun otomatis dibuat saat masuk pertama kali.</small>
+        </div>
+
+        <!-- HALAMAN DASHBOARD -->
+        <div id="halamanDashboard" class="hidden">
+            <div class="kotak dashboard-header">
+                <h2 id="teksSapa"></h2>
+                <p id="teksTanggal"></p>
+                <div class="ringkasan">
+                    <span>📋 0 tugas tertunda</span>
+                    <span>✅ 0 selesai</span>
+                    <span>📅 0 jadwal hari ini</span>
+                </div>
+            </div>
+
+            <div class="kotak">
+                <h3>📅 Jadwal Kuliah</h3>
+                <p>Jadwal mingguan Anda — tambah, edit, atau hapus sesuai kebutuhan.</p>
+                <button onclick="tambahJadwal()">+ Tambah Jadwal</button>
+                <ul id="daftarJadwal">
+                    <li>Belum ada jadwal kuliah</li>
+                </ul>
+            </div>
+
+            <div class="kotak">
+                <h3>✅ Daftar Tugas Kuliah</h3>
+                <p>Tandai selesai, edit, atau hapus tugasmu di sini.</p>
+                <button onclick="tambahTugas()">+ Tambah Tugas</button>
+                <ul id="daftarTugas"></ul>
+            </div>
+
+            <div class="kotak">
+                <h3>🔔 Pengaturan Pengingat</h3>
+                <p>Pilih kapan notifikasi & suara chime berbunyi menjelang deadline tugas.</p>
+                <label><input type="checkbox" id="opsi1"> 1 hari sebelum — untuk deadline mendesak</label>
+                <label><input type="checkbox" id="opsi2"> 2 hari sebelum — waktu persiapan singkat</label>
+                <label><input type="checkbox" id="opsi5"> 5 hari sebelum — persiapan lebih santai</label>
+                <label><input type="checkbox" id="suaraChime"> Bunyikan suara chime saat pengingat</label>
+                <p class="catatan">🔔 Notifikasi browser: Aktifkan melalui pengaturan situs di browsermu</p>
+            </div>
+
+            <div class="kotak">
+                <h3>👤 Profil Mahasiswa</h3>
+                <p id="teksProfil"></p>
+                <button>Edit Profil</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
